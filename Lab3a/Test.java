@@ -6,7 +6,7 @@ public class Test {
 	public static void main(String[] args) {
 		Product p1 = new Product("001", "Coca Cola", 10.0, "Soft Drink");
 		Product p2 = new Product("004", "Pepsi", 18.0, "Soft Drink");
-		Product p3 = new Product("002", "Orange", 11.0, "Fruit");
+		Product p3 = new Product("003", "Ramos Gin Fizz", 11.0, "Cooktail");
 		Product p4 = new Product("003", "Apple", 12.0, "Fruit");
 		Product p5 = new Product("005", "Tivi", 12.0, "Electronic");
 
@@ -27,16 +27,7 @@ public class Test {
 
 		Product[] type1 = order.filter("Soft Drink");
 		Product[] type2 = order.filter("Fruit");
-
-		System.out.println("Type 1: ");
-		for (Product product : type1) {
-			System.out.println(product.getName() + " ");
-		}
-
-		System.out.println("Type 2: ");
-		for (Product product : type2) {
-			System.out.println(product.getName() + " ");
-		}
-
+                System.out.println("Type 1: " + Arrays.toString(type1));
+		System.out.println("Type 2: " + Arrays.toString(type2));
 	}
 }
