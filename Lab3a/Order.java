@@ -1,8 +1,5 @@
 package Lab3a;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Order {
 	private OrderItem[] items;
 
@@ -44,12 +41,21 @@ public class Order {
 	// get all products based on the given type using
 	// linear search
 	public Product[] filter(String type) {
-		List<Product> filterProducts = new ArrayList<>();
-		for (OrderItem item : items) {
-			if(item.getP().getType().equalsIgnoreCase(type)) {
-				filterProducts.add(item.getP());
+		int count = 0;
+		for (int i = 0; i < items.length; i++) {
+			if(items[i].getP().getType().equals(type)) {
+				count++;
 			}
 		}
-		return filterProducts.toArray(new Product[0]);
+		Product result[] = new Product[count];
+		int index = 0;
+		
+		for (int i = 0; i < items.length; i++) {
+			if(items[i].getP().getType().equals(type)) {
+				result[index] = items[i].getP();
+				index++;
+			}
+		}
+		return result;
 	}
 }
